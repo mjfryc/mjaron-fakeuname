@@ -1,10 +1,11 @@
-#define _GNU_SOURCE
+// #define _GNU_SOURCE
 #include <unistd.h>
 #include <sys/syscall.h>
 #include <sys/utsname.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdio.h>
 
 #ifndef mjaron_fakeuname_H
 #include "mjaron-fakeuname.h"

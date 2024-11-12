@@ -3,13 +3,15 @@
  * @brief The fakeuname library which shadows original uname function.
  *        Sample usage:
  *
- *        gcc -c -Wall -Werror -fpic fakeuname-all.c
- *        gcc -shared -o libmjaron-fakeuname.so fakeuname-all.o
+ *        gcc -c -Wall -Werror -fpic mjaron-fakeuname-all.c
+ *        gcc -shared -o libmjaron-fakeuname.so mjaron-fakeuname-all.o
  *        env MJARON_FAKEUNAME_PRESET=i686 LD_PRELOAD=./libmjaron-fakeuname.so uname -a
  */
 
 #ifndef mjaron_fakeuname_H
 #define mjaron_fakeuname_H
+
+#define  _GNU_SOURCE
 
 #include <string.h>
 #include <stdio.h>
