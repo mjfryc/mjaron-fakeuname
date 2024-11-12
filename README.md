@@ -13,7 +13,21 @@ Fake version of Linux uname function.
   ```
 * Configure and override the system library:
   ```bash
-  env MJARON_FAKEUNAME_PRESET=i686 LD_PRELOAD=./libmjaron-fakeuname.so uname -a
+  export LD_PRELOAD=$(pwd)/libmjaron-fakeuname.so
+  ```
+* Use, e.g:
+  ```bash
+  env MJARON_FAKEUNAME_PRESET=i686 uname -a
+  ```
+  or:
+  ```bash
+  env MJARON_FAKEUNAME_MACHINE=i686 uname -a
+  ```
+  or:
+  ```bash
+  export MJARON_FAKEUNAME_CONF=/etc/mjaron-fakenode.conf
+  /etc/mjaron-fakenode.conf # ...Edit the conf...
+  uname -a
   ```
 
 ## Alternative confuguration ways
@@ -28,3 +42,21 @@ The library does the following:
 3. Look for indifivual values and override above configuration:
    * `MJARON_FAKEUNAME_MACHINE` - changes the machine value.
 
+## The configuration file
+
+The default location of configration file is `/etc/mjaron_fakeuname.conf` and may be changed with `export MJARON_FAKEUNAME_CONF=...`.
+
+Current computer configuration may be generated with `mjaron-fakeuname-conf.sh`, e.g:
+
+```bash
+./mjaron-fakeuname-conf.sh 
+# MJaron FakeNode
+# Configuration of : hydra
+# Used when MJARON_FAKEUNAME_CONF is set.
+
+sysname: GNU/Linux
+nodename: hostname
+release: 6.8.0-48-generic
+version: #48-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep 27 14:04:52 UTC 2024
+machine: x86_64
+```
