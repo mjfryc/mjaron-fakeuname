@@ -13,7 +13,7 @@
 
 mjaron_fakeuname_struct mjaron_fakeuname_preset_i686 =
 {
-    "GNU/Linux",
+    "Linux",
     "mjaron_fakeuname",
     "2.6.32-754.28.1.el6.i686",
     "#SMP Wed Mar 11 19:03:51 UTC 2020",
