@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
 
 project(mjaron-fakeuname
-    VERSION 0.0.2
+    VERSION 0.0.3
     DESCRIPTION "An Linux uname stub library."
     HOMEPAGE_URL "https://github.com/mjfryc/"
 )
