@@ -1,5 +1,5 @@
 # mjaron-fakeuname
-Fake version of Linux [`uname()`](https://www.man7.org/linux/man-pages/man2/uname.2.html) function.
+Fake version of Linux [`uname()`](https://www.man7.org/linux/man-pages/man2/uname.2.html) function. Allows replacing the result of [`uname](https://www.man7.org/linux/man-pages/man1/uname.1.html) command.
 
 ## Integration
 
