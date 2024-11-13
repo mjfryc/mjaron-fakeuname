@@ -13,7 +13,7 @@
 
 const mjaron_fakeuname_struct mjaron_fakeuname_preset_i686 = {
     "Linux",
-    "mjaron_fakeuname",
+    "mjaron-fakeuname",
     "2.6.32-754.28.1.el6.i686",
     "#SMP Wed Mar 11 19:03:51 UTC 2020",
     "i686",
@@ -22,7 +22,7 @@ const mjaron_fakeuname_struct mjaron_fakeuname_preset_i686 = {
 
 const mjaron_fakeuname_struct mjaron_fakeuname_preset_x86_64 = {
     "Linux",
-    "mjaron_fakeuname",
+    "mjaron-fakeuname",
     "6.8.0-48-generic",
     "#48-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep 27 14:04:52 UTC 2024",
     "x86_64",
@@ -257,7 +257,7 @@ extern int uname(struct utsname* un)
     const char* conf = getenv("MJARON_FAKEUNAME_CONF");
     if (conf == NULL)
     {
-        conf = "/etc/mjaron_fakeuname.conf";
+        conf = MJARON_FAKEUNAME_CONF_DEFAULT;
     }
     mjaron_fakeuname_read(conf, un);
 

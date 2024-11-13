@@ -18,6 +18,8 @@
 
 #include <sys/utsname.h>
 
+#define MJARON_FAKEUNAME_CONF_DEFAULT "/etc/mjaron-fakeuname.conf"
+
 #if _UTSNAME_DOMAIN_LENGTH - 0
 /* Name of the domain of this node on the network.  */
 #ifdef __USE_GNU

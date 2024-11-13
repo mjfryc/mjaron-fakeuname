@@ -50,13 +50,13 @@ The library does the following:
    * Currently only `i686` value is defined which simulates 32-bit operating system.
 2. Look for the contiguration file at:
    * `MJARON_FAKEUNAME_CONF` environment variable if set.
-   * `/etc/mjaron_fakeuname.conf` by default, if exists.
+   * `/etc/mjaron-fakeuname.conf` by default, if exists.
 3. Look for indifivual values and override above configuration:
    * `MJARON_FAKEUNAME_MACHINE` - changes the machine value.
 
 ## The configuration file
 
-The default location of configration file is `/etc/mjaron_fakeuname.conf` and may be changed with `export MJARON_FAKEUNAME_CONF=...`.
+The default location of configration file is `/etc/mjaron-fakeuname.conf` and may be changed with `export MJARON_FAKEUNAME_CONF=...`.
 
 Current computer configuration may be generated with `mjaron-fakeuname-conf.sh`, e.g:
 
