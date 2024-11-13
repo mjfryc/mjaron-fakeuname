@@ -1,5 +1,5 @@
 # mjaron-fakeuname
-Fake version of Linux [`uname()`](https://www.man7.org/linux/man-pages/man2/uname.2.html) function. Allows replacing the result of [`uname -a`](https://www.man7.org/linux/man-pages/man1/uname.1.html) command.
+Fake version of Linux [`uname()`](https://www.man7.org/linux/man-pages/man2/uname.2.html) function. Allows replacing the result of Linux [`uname -a`](https://www.man7.org/linux/man-pages/man1/uname.1.html) and Python [os.uname](https://docs.python.org/3/library/os.html#os.uname) commands. Impacts the yum package manager to select packages architecture.
 
 ## Integration
 
