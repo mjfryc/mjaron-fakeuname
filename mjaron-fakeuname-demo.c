@@ -1,7 +1,7 @@
 #define _GNU_SOURCE
-#include <unistd.h>
 #include <sys/syscall.h>
 #include <sys/utsname.h>
+#include <unistd.h>
 
 #include "mjaron-fakeuname.h"
 

@@ -11,22 +11,22 @@
 #ifndef mjaron_fakeuname_H
 #define mjaron_fakeuname_H
 
-#define  _GNU_SOURCE
+#define _GNU_SOURCE
 
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 #include <sys/utsname.h>
 
 #if _UTSNAME_DOMAIN_LENGTH - 0
 /* Name of the domain of this node on the network.  */
-# ifdef __USE_GNU
+#ifdef __USE_GNU
 // The name of domainname member.
 #define MJARON_FAKEUNAME_DOMAINNAME domainname
-# else
+#else
 // The name of domainname member.
 #define MJARON_FAKEUNAME_DOMAINNAME __domainname
-# endif
+#endif
 #endif
 
 #define MJARON_FAKEUNAME_INLINE static inline
@@ -47,39 +47,39 @@ MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set(char* dst, const char* src, si
     dst[len - 1] = 0x00;
 }
 
-MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_sysname(struct utsname *un, const char* what)
+MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_sysname(struct utsname* un, const char* what)
 {
     mjaron_fakeuname_set(un->sysname, what, _UTSNAME_SYSNAME_LENGTH);
 }
 
-MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_nodename(struct utsname *un, const char* what)
+MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_nodename(struct utsname* un, const char* what)
 {
     mjaron_fakeuname_set(un->nodename, what, _UTSNAME_NODENAME_LENGTH);
 }
 
-MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_release(struct utsname *un, const char* what)
+MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_release(struct utsname* un, const char* what)
 {
     mjaron_fakeuname_set(un->release, what, _UTSNAME_RELEASE_LENGTH);
 }
 
-MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_version(struct utsname *un, const char* what)
+MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_version(struct utsname* un, const char* what)
 {
     mjaron_fakeuname_set(un->version, what, _UTSNAME_VERSION_LENGTH);
 }
 
-MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_machine(struct utsname *un, const char* what)
+MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_machine(struct utsname* un, const char* what)
 {
     mjaron_fakeuname_set(un->machine, what, _UTSNAME_MACHINE_LENGTH);
 }
 
-MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_domainname(struct utsname *un, const char* what)
+MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_domainname(struct utsname* un, const char* what)
 {
 #ifdef MJARON_FAKEUNAME_DOMAINNAME
     mjaron_fakeuname_set(un->MJARON_FAKEUNAME_DOMAINNAME, what, _UTSNAME_DOMAIN_LENGTH);
 #endif // !MJARON_FAKEUNAME_DOMAINNAME
 }
 
-MJARON_FAKEUNAME_INLINE const char* mjaron_fakeuname_get_domainname(const struct utsname *un)
+MJARON_FAKEUNAME_INLINE const char* mjaron_fakeuname_get_domainname(const struct utsname* un)
 {
 #ifdef MJARON_FAKEUNAME_DOMAINNAME
     return un->MJARON_FAKEUNAME_DOMAINNAME;
@@ -88,13 +88,13 @@ MJARON_FAKEUNAME_INLINE const char* mjaron_fakeuname_get_domainname(const struct
 #endif // !MJARON_FAKEUNAME_DOMAINNAME
 }
 
-MJARON_FAKEUNAME_INLINE const char* mjaron_fakeuname_get_domainname_or(const struct utsname *un, const char* const orValue)
+MJARON_FAKEUNAME_INLINE const char* mjaron_fakeuname_get_domainname_or(const struct utsname* un, const char* const orValue)
 {
     const char* domainValue = mjaron_fakeuname_get_domainname(un);
     return (domainValue) ? domainValue : orValue;
 }
 
-MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_struct(struct utsname *un, const mjaron_fakeuname_struct what)
+MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_set_struct(struct utsname* un, const mjaron_fakeuname_struct what)
 {
     mjaron_fakeuname_set_sysname(un, what.sysname);
     mjaron_fakeuname_set_nodename(un, what.nodename);
@@ -115,4 +115,3 @@ MJARON_FAKEUNAME_INLINE void mjaron_fakeuname_print_utsname(const struct utsname
 }
 
 #endif // !mjaron_fakeuname_H
-
