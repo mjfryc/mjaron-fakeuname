@@ -1,5 +1,5 @@
 # mjaron-fakeuname
-Fake version of Linux uname function.
+Fake version of Linux [`uname()`](https://www.man7.org/linux/man-pages/man2/uname.2.html) function.
 
 ## Integration
 
