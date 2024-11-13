@@ -3,6 +3,16 @@ Fake version of Linux uname function.
 
 ## Integration
 
+All steps in one:
+
+```bash
+curl -L -o mjaron-fakeuname-all.c https://github.com/mjfryc/mjaron-fakeuname/releases/download/v0.0.4/mjaron-fakeuname-all.c &&
+  gcc -c -Wall -Werror -fpic mjaron-fakeuname-all.c && gcc -shared -o libmjaron-fakeuname.so mjaron-fakeuname-all.o  &&
+  export LD_PRELOAD=$(pwd)/libmjaron-fakeuname.so
+```
+
+Detailed steps:
+
 * Download the release source code file:
   ```bash
   curl -L -o mjaron-fakeuname-all.c https://github.com/mjfryc/mjaron-fakeuname/releases/download/v0.0.4/mjaron-fakeuname-all.c
@@ -15,20 +25,22 @@ Fake version of Linux uname function.
   ```bash
   export LD_PRELOAD=$(pwd)/libmjaron-fakeuname.so
   ```
-* Use, e.g:
-  ```bash
-  env MJARON_FAKEUNAME_PRESET=i686 uname -a
-  ```
-  or:
-  ```bash
-  env MJARON_FAKEUNAME_MACHINE=i686 uname -a
-  ```
-  or:
-  ```bash
-  export MJARON_FAKEUNAME_CONF=/etc/mjaron-fakenode.conf
-  /etc/mjaron-fakenode.conf # ...Edit the conf...
-  uname -a
-  ```
+
+## Usage examples
+
+```bash
+env MJARON_FAKEUNAME_PRESET=i686 uname -a
+```
+or:
+```bash
+env MJARON_FAKEUNAME_MACHINE=i686 uname -a
+```
+or:
+```bash
+export MJARON_FAKEUNAME_CONF=/etc/mjaron-fakenode.conf
+/etc/mjaron-fakenode.conf # ...Edit the conf...
+uname -a
+```
 
 ## Alternative confuguration ways
 
