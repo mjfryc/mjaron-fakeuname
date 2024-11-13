@@ -5,7 +5,7 @@ Fake version of Linux uname function.
 
 * Download the release source code file:
   ```bash
-  curl -L -o mjaron-fakeuname-all.c https://github.com/mjfryc/mjaron-fakeuname/releases/download/v0.0.3/mjaron-fakeuname-all.c
+  curl -L -o mjaron-fakeuname-all.c https://github.com/mjfryc/mjaron-fakeuname/releases/download/v0.0.4/mjaron-fakeuname-all.c
   ```
 * Compile the code - make shared library:
   ```bash
