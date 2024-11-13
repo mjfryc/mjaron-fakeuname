@@ -6,7 +6,7 @@ Fake version of Linux [`uname()`](https://www.man7.org/linux/man-pages/man2/unam
 All steps in one:
 
 ```bash
-curl -L -o mjaron-fakeuname-all.c https://github.com/mjfryc/mjaron-fakeuname/releases/download/v0.0.4/mjaron-fakeuname-all.c &&
+curl -L -o mjaron-fakeuname-all.c https://github.com/mjfryc/mjaron-fakeuname/releases/download/v0.0.5/mjaron-fakeuname-all.c &&
   gcc -c -Wall -Werror -fpic mjaron-fakeuname-all.c && gcc -shared -o libmjaron-fakeuname.so mjaron-fakeuname-all.o  &&
   export LD_PRELOAD=$(pwd)/libmjaron-fakeuname.so
 ```
@@ -15,7 +15,7 @@ Detailed steps:
 
 * Download the release source code file:
   ```bash
-  curl -L -o mjaron-fakeuname-all.c https://github.com/mjfryc/mjaron-fakeuname/releases/download/v0.0.4/mjaron-fakeuname-all.c
+  curl -L -o mjaron-fakeuname-all.c https://github.com/mjfryc/mjaron-fakeuname/releases/download/v0.0.5/mjaron-fakeuname-all.c
   ```
 * Compile the code - make shared library:
   ```bash
