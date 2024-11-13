@@ -212,8 +212,8 @@ int mjaron_fakeuname_read(const char* const conf, struct utsname* un)
             MJARON_FAKEUNAME_LOGE(line);
             return EXIT_FAILURE;
         }
-        MJARON_FAKEUNAME_LOGE("Line processed:");
-        MJARON_FAKEUNAME_LOGE(line);
+        // MJARON_FAKEUNAME_LOGE("Line processed:");
+        // MJARON_FAKEUNAME_LOGE(line);
     }
 
     fclose(fp);
