@@ -1,6 +1,9 @@
 # mjaron-fakeuname
 Fake version of Linux [`uname()`](https://www.man7.org/linux/man-pages/man2/uname.2.html) function. Allows replacing the result of Linux [`uname -a`](https://www.man7.org/linux/man-pages/man1/uname.1.html) and Python [os.uname](https://docs.python.org/3/library/os.html#os.uname) commands. Impacts the yum package manager to select packages architecture.
 
+> [!NOTE]
+> Use linux [setarch](https://www.man7.org/linux/man-pages/man8/setarch.8.html) command instead of such custom tools, e.g: `setarch i686`.
+
 ## Integration
 
 All steps in one:
@@ -62,9 +65,6 @@ Current computer configuration may be generated with `mjaron-fakeuname-conf.sh`,
 
 ```bash
 ./mjaron-fakeuname-conf.sh 
-# MJaron FakeNode
-# Configuration of : hydra
-# Used when MJARON_FAKEUNAME_CONF is set.
 
 sysname: GNU/Linux
 nodename: hostname
